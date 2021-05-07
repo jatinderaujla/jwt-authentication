@@ -1,2 +1,2 @@
 # JWT Authentication
-## JWT role based authenctication with Spring Security
+## Spring Security role-based JWT authentication
