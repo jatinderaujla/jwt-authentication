@@ -1,8 +1,11 @@
-package com.pinakey.authentication.config;
+package com.jatinder.develop.config;
 
-import com.pinakey.authentication.exception.JwtAuthenticationEntryPoint;
-import com.pinakey.authentication.filter.JWTSecurityFilter;
-import com.pinakey.authentication.service.AppUserDetailService;
+import com.jatinder.develop.exception.JwtAuthenticationEntryPoint;
+import com.jatinder.develop.filter.JWTSecurityFilter;
+import com.jatinder.develop.service.AppUserDetailService;
+import com.jatinder.develop.exception.JwtAuthenticationEntryPoint;
+import com.jatinder.develop.filter.JWTSecurityFilter;
+import com.jatinder.develop.service.AppUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,10 +19,15 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @Configuration
 @EnableWebSecurity
@@ -46,9 +54,24 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.
-                csrf().disable()
-                .authorizeRequests().antMatchers("/auth/**").permitAll()
+        // enable CORS protection
+        http.cors().configurationSource(corsConfigurationSource());
+
+        // force to receive only HTTP request only
+//		http.requiresChannel().anyRequest().requiresSecure();
+
+        // disable Cross Site Request Forgery to prevent cross-site attack
+        http.csrf().disable();
+
+        // Content Security Policy to prevent XSS attack
+        http.headers().contentSecurityPolicy(
+                "default-src 'self'; script-src 'self' object-src 'none' report-uri /reports/csp-report/");
+
+        http.headers().xssProtection();
+
+        http.csrf().disable();
+
+        http.authorizeRequests().antMatchers("/auth/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint)
@@ -67,5 +90,20 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
+    }
+
+    // CORS configuration bean class
+    private CorsConfigurationSource corsConfigurationSource() {
+        final CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(
+                Arrays.asList("http://localhost:8080"));
+        configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+        configuration.setExposedHeaders(Arrays.asList("Authorization", "Content-Type"));
+        configuration.setAllowCredentials(true);
+
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 }

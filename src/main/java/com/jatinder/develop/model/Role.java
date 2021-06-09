@@ -1,7 +1,10 @@
-package com.pinakey.authentication.model;
+package com.jatinder.develop.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
@@ -9,8 +12,7 @@ import java.util.Set;
 
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @Entity
 @Getter

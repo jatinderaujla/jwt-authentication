@@ -1,7 +1,8 @@
-package com.pinakey.authentication.api;
+package com.jatinder.develop.api;
 
-import com.pinakey.authentication.model.Role;
-import com.pinakey.authentication.repository.RoleRepository;
+import com.jatinder.develop.model.Role;
+import com.jatinder.develop.repository.RoleRepository;
+import com.jatinder.develop.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,8 +10,7 @@ import java.util.List;
 
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @RestController
 @RequestMapping("/roles")

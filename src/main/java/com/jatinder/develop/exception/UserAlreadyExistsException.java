@@ -1,17 +1,15 @@
-package com.pinakey.authentication.exception;
+package com.jatinder.develop.exception;
 
 import lombok.Data;
 
 /**
  * @author Jatinder
- * @since 11/15/2020 9:27 PM
+ * @since 1.0.0
  */
 @Data
 public class UserAlreadyExistsException extends RuntimeException {
 
-    private String message;
-
     public UserAlreadyExistsException(String message) {
-        this.message = message;
+        super(message);
     }
 }

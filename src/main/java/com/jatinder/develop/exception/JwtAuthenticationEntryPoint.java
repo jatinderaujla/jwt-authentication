@@ -1,4 +1,4 @@
-package com.pinakey.authentication.exception;
+package com.jatinder.develop.exception;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -11,8 +11,7 @@ import java.io.IOException;
 
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {

@@ -1,4 +1,4 @@
-package com.pinakey.authentication.api;
+package com.jatinder.develop.api;
 
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;

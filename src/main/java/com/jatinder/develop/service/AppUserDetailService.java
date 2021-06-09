@@ -1,10 +1,13 @@
-package com.pinakey.authentication.service;
+package com.jatinder.develop.service;
 
-import com.pinakey.authentication.exception.UserAlreadyExistsException;
-import com.pinakey.authentication.model.Role;
-import com.pinakey.authentication.model.User;
-import com.pinakey.authentication.repository.RoleRepository;
-import com.pinakey.authentication.repository.UserRepository;
+import com.jatinder.develop.exception.UserAlreadyExistsException;
+import com.jatinder.develop.model.Role;
+import com.jatinder.develop.model.User;
+import com.jatinder.develop.repository.RoleRepository;
+import com.jatinder.develop.repository.UserRepository;
+import com.jatinder.develop.exception.UserAlreadyExistsException;
+import com.jatinder.develop.repository.RoleRepository;
+import com.jatinder.develop.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,8 +21,7 @@ import java.util.stream.Stream;
 
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @Service
 public class AppUserDetailService implements UserDetailsService {

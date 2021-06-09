@@ -1,4 +1,4 @@
-package com.pinakey.authentication.dto;
+package com.jatinder.develop.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @Data
 @AllArgsConstructor

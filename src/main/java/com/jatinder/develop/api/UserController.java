@@ -1,8 +1,10 @@
-package com.pinakey.authentication.api;
+package com.jatinder.develop.api;
 
-import com.pinakey.authentication.model.User;
-import com.pinakey.authentication.repository.UserRepository;
-import com.pinakey.authentication.service.AppUserDetailService;
+import com.jatinder.develop.model.User;
+import com.jatinder.develop.repository.UserRepository;
+import com.jatinder.develop.service.AppUserDetailService;
+import com.jatinder.develop.repository.UserRepository;
+import com.jatinder.develop.service.AppUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,8 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @RestController
 @RequestMapping("/users")

@@ -1,10 +1,14 @@
-package com.pinakey.authentication.api;
+package com.jatinder.develop.api;
 
-import com.pinakey.authentication.dto.AuthenticationRequest;
-import com.pinakey.authentication.dto.AuthenticationResponse;
-import com.pinakey.authentication.model.User;
-import com.pinakey.authentication.service.AppUserDetailService;
-import com.pinakey.authentication.util.JWTUtil;
+import com.jatinder.develop.dto.AuthenticationRequest;
+import com.jatinder.develop.dto.AuthenticationResponse;
+import com.jatinder.develop.model.User;
+import com.jatinder.develop.service.AppUserDetailService;
+import com.jatinder.develop.util.JWTUtil;
+import com.jatinder.develop.dto.AuthenticationRequest;
+import com.jatinder.develop.dto.AuthenticationResponse;
+import com.jatinder.develop.service.AppUserDetailService;
+import com.jatinder.develop.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -18,8 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 
 @RestController

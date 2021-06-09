@@ -1,6 +1,6 @@
-package com.pinakey.authentication.filter;
+package com.jatinder.develop.filter;
 
-import com.pinakey.authentication.util.JWTUtil;
+import com.jatinder.develop.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,8 +18,7 @@ import java.io.IOException;
 
 /***
  * @author Jatinder
- * @since 11/15/2020 8:32 PM
- * @version 0.0.1
+ * @since 1.0.0
  */
 @Component
 public class JWTSecurityFilter extends OncePerRequestFilter {
